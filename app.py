@@ -1,7 +1,6 @@
 import streamlit as st
 import requests
 import json
-from config import GROK_API_KEY
 
 # Streamlit page config
 st.set_page_config(page_title="FaithFin Investor Bot", page_icon="🙏", layout="centered")
@@ -101,7 +100,7 @@ if st.button("Ask FaithFin"):
     else:
         # Prepare Grok API request
         headers = {
-            "Authorization": f"Bearer {GROK_API_KEY}",
+            "Authorization": f"Bearer {st.secrets['GROK_API_KEY']}",
             "Content-Type": "application/json"
         }
         faith_context = {
